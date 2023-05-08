@@ -1,22 +1,35 @@
-import { getAllProjs } from "@/lib/api";
-import styles from "../styles/Home.module.scss";
+import { getProjSlugs } from "@/lib/api";
+import styles from "./Home.module.scss";
+import Nav from "@/components/Nav";
+import Contact from "@/components/Contact";
+import Scroller from "@/components/Scroller";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
-  const projs = getAllProjs(["title", "image", "slug"]);
+  const projs = getProjSlugs();
+  const driftSpeed = 0.25;
 
   return (
-    <main>
-      <h1>Hello World!</h1>
-      <ul>
-        {projs.map((proj) => (
-          <li key={proj.slug}>
-            <a href={`projects/${proj.slug}`}>
-              <h3>{proj.title}</h3>
-              <img src={proj.image} alt={proj.title} />
-            </a>
-          </li>
-        ))}
-      </ul>
+    <main className={styles.home}>
+      <Nav />
+      <div className={styles.gallery}>
+        <Scroller drift={driftSpeed}>
+          {projs.map((slug) => (
+            <ProjectCard key={slug} slug={slug} />
+          ))}
+        </Scroller>
+        <Scroller drift={-driftSpeed}>
+          {projs.map((slug) => (
+            <ProjectCard key={slug} slug={slug} />
+          ))}
+        </Scroller>
+        <Scroller drift={driftSpeed}>
+          {projs.map((slug) => (
+            <ProjectCard key={slug} slug={slug} />
+          ))}
+        </Scroller>
+      </div>
+      <Contact />
     </main>
   );
 }

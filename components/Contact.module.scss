@@ -1,0 +1,23 @@
+.contact {
+  aspect-ratio: 1/1;
+  padding: 2rem;
+  position: fixed;
+  top: -1.5rem;
+  right: -1.5rem;
+  display: grid;
+  place-items: center;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  border-radius: 50%;
+}
+
+.header {
+  text-transform: uppercase;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+}
+
+.contactlist {
+  position: absolute;
+  visibility: hidden;
+}

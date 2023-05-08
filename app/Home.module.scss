@@ -1,0 +1,13 @@
+.home {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+}
+
+.gallery {
+  margin-right: 16rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
