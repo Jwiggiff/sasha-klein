@@ -1,9 +1,9 @@
 ---
-title: Proj Two
-image: https://via.placeholder.com/150x200?text=Proj2
+title: Proj Seven
+image: https://via.placeholder.com/150x200?text=Proj7
 ---
 
-# Proj. 2
+# Proj. 7
 
 ## By Sasha Klein
 

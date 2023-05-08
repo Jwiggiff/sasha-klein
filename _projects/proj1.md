@@ -1,6 +1,6 @@
 ---
-title: Proj. 1
-image: https://via.placeholder.com/150x300?text=Proj1
+title: Proj One
+image: https://via.placeholder.com/150x200?text=Proj1
 ---
 
 # Proj. 1
