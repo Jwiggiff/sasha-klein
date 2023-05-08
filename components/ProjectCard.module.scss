@@ -35,7 +35,7 @@
 
   &:hover,
   &:focus-visible {
-    // transform: scale(1.05);
+    transform: scale(1.05);
 
     h2 {
       opacity: 1;
@@ -45,5 +45,9 @@
     .bg_overlay {
       opacity: 1;
     }
+  }
+
+  &:active {
+    transform: scale(0.95);
   }
 }
