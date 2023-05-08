@@ -7,7 +7,7 @@ import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   const projs = getProjSlugs();
-  const driftSpeed = 0;
+  const driftSpeed = 0.25;
 
   return (
     <main className={styles.home}>

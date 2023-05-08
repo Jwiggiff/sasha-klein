@@ -12,9 +12,9 @@ export default function Scroller({
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const childrenRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [drifting, setDrifting] = useState(true);
   const translates = useRef<number[]>([]);
   let height: number;
+  let driftID: number;
 
   const scroll = (dy: number) => {
     childrenRefs.current.forEach((el, i) => {
@@ -44,6 +44,11 @@ export default function Scroller({
     });
   };
 
+  const drifter = () => {
+    scroll(drift!);
+    driftID = requestAnimationFrame(drifter);
+  };
+
   useEffect(() => {
     height = childrenRefs.current.reduce(
       (h, el) => h + el!.getBoundingClientRect().height,
@@ -66,18 +71,14 @@ export default function Scroller({
 
   useEffect(() => {
     if (drift) {
-      let int: NodeJS.Timer;
-      if (drifting) int = setInterval(() => scroll(drift), 1000 / 60);
-      else clearInterval(int!);
-
-      return () => clearInterval(int);
+      driftID = requestAnimationFrame(drifter);
     }
-  }, [drifting]);
+  }, []);
 
   return (
     <div
-      // onMouseEnter={() => setDrifting(false)}
-      // onMouseLeave={() => setDrifting(true)}
+      onMouseEnter={() => cancelAnimationFrame(driftID)}
+      onMouseLeave={() => (driftID = requestAnimationFrame(drifter))}
       ref={containerRef}
       className={styles.scroller}
       onWheel={(e: WheelEvent<HTMLDivElement>) => scroll(e.deltaY)}
