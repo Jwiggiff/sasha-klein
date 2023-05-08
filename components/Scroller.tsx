@@ -31,7 +31,7 @@ export default function Scroller({
         duration = 0;
       }
 
-      el!.animate(
+      el?.animate(
         {
           transform: `translateY(${translates.current[i]}px)`,
         },
