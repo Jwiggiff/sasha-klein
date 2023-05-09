@@ -1,17 +1,18 @@
 .contact {
-  aspect-ratio: 1/1;
-  padding: 2rem;
   position: fixed;
   top: -1.5rem;
   right: -1.5rem;
   display: grid;
   place-items: center;
-  background-color: var(--text-color);
   color: var(--bg-color);
-  border-radius: 50%;
 }
 
-.header {
+.button {
+  aspect-ratio: 1/1;
+  padding: 2rem;
+  background-color: var(--text-color);
+  font-size: var(--fs-h5);
+  border-radius: 50%;
   text-transform: uppercase;
   font-weight: normal;
   letter-spacing: 0.05em;
@@ -20,4 +21,61 @@
 .contactlist {
   position: absolute;
   visibility: hidden;
+  z-index: -1;
+  transition: visibility 0s 0.8s;
+
+  .contactlink {
+    display: grid;
+    place-items: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    position: absolute;
+    top: -2rem;
+    left: -2rem;
+    transform: translate(0, 0);
+
+    transition: transform 0.3s ease-out;
+
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        transition-delay: 0.3s + 0.1s * ($i - 1);
+      }
+    }
+  }
+}
+
+.contact.open {
+  button {
+    animation: bounce 0.4s ease-in-out;
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(0.9);
+      }
+    }
+  }
+
+  .contactlist {
+    visibility: visible;
+    transition: visibility 0s;
+
+    .contactlink {
+      &:nth-child(1) {
+        transform: translate(-10rem, 1rem);
+      }
+      &:nth-child(2) {
+        transform: translate(-7rem, 7rem);
+      }
+      &:nth-child(3) {
+        transform: translate(-1rem, 10rem);
+      }
+    }
+  }
 }
