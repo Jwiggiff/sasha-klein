@@ -1,7 +1,6 @@
 import { getProjSlugs } from "@/lib/api";
 import styles from "./Home.module.scss";
 import Nav from "@/components/Nav";
-import Contact from "@/components/Contact";
 import Scroller from "@/components/Scroller";
 import ProjectCard from "@/components/ProjectCard";
 
@@ -29,7 +28,6 @@ export default function Home() {
           ))}
         </Scroller>
       </div>
-      <Contact />
     </main>
   );
 }
