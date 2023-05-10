@@ -1,0 +1,36 @@
+html,
+body {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+
+    &-thumb {
+      background-color: var(--text-color);
+      border-radius: 2rem;
+    }
+  }
+}
+
+article {
+  --container-width: clamp(20rem, calc(100% - 26rem), 80rem);
+  width: var(--container-width);
+  margin-inline: auto;
+
+  > div {
+    margin-block: 6rem;
+
+    &:first-child {
+      margin-block-start: 0;
+    }
+  }
+}
+
+.full-width {
+  width: calc(100vw - 0.25rem);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: calc(-50vw + 0.125rem);
+  margin-right: calc(-50vw + 0.125rem);
+}

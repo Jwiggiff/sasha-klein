@@ -1,0 +1,23 @@
+.header {
+  width: clamp(20rem, calc(100% - 14rem), 88rem);
+  margin-inline: auto;
+  padding: 4rem 0;
+
+  .button {
+    font-size: var(--fs-h4);
+    font-family: "Larken", serif;
+    text-transform: uppercase;
+    color: var(--text-color);
+    position: relative;
+
+    &::before {
+      content: url("/assets/arrow.svg");
+      width: 0.7em;
+      height: 0.7em;
+      position: absolute;
+      top: -0.5em;
+      left: -1em;
+      transform: scale(-1, 1);
+    }
+  }
+}

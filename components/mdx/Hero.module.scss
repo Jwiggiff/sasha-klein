@@ -1,0 +1,15 @@
+.hero {
+  img {
+    width: var(--container-width);
+    margin-inline: auto;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    width: clamp(20rem, calc(100% - 14rem), 88rem);
+    margin-inline: auto;
+    margin-bottom: -0.6em;
+    position: relative;
+    z-index: 2;
+  }
+}

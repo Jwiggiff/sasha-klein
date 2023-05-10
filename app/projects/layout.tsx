@@ -1,7 +1,15 @@
+import ProjectsHeader from "@/components/ProjectsHeader";
+import "./Projects.scss";
+
 export default function ProjectsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return <article>{children}</article>;
+  return (
+    <>
+      <ProjectsHeader />
+      <article>{children}</article>
+    </>
+  );
 }

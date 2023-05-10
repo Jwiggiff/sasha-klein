@@ -10,7 +10,7 @@ export function getProjSlugs() {
 
 export function getProjBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = path.join(projDirectory, `${realSlug}.md`);
+  const fullPath = path.join(projDirectory, realSlug, `${realSlug}.mdx`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
 
