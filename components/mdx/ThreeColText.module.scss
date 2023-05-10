@@ -19,16 +19,10 @@
   }
 
   > span:last-child {
-    font-size: var(--fs-h4);
+    font-size: var(--fs-h2);
   }
 
   > div {
     margin-inline: 8rem;
-
-    h2 {
-      font-size: var(--fs-h4);
-      font-weight: normal;
-      text-transform: uppercase;
-    }
   }
 }

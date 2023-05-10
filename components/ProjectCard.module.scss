@@ -21,10 +21,7 @@
     transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
   }
 
-  h2 {
-    text-transform: uppercase;
-    font-size: var(--fs-h5);
-    font-weight: normal;
+  h3 {
     position: absolute;
     bottom: 0;
     left: 0.75rem;
@@ -37,7 +34,7 @@
   &:focus-visible {
     transform: scale(1.05);
 
-    h2 {
+    h3 {
       opacity: 1;
       transform: translateY(0);
     }

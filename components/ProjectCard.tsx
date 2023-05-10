@@ -9,7 +9,7 @@ export default function ProjectCard({ slug }: { slug: string }) {
     <Link href={`projects/${project.slug}`} className={styles.projectcard}>
       <img src={project.image} alt={project.title} />
       <div className={styles.bg_overlay}></div>
-      <h2>{project.title}</h2>
+      <h3>{project.title}</h3>
     </Link>
   );
 }
