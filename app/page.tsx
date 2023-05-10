@@ -3,6 +3,7 @@ import styles from "./Home.module.scss";
 import Nav from "@/components/Nav";
 import Scroller from "@/components/Scroller";
 import ProjectCard from "@/components/ProjectCard";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const projs = getProjSlugs();
@@ -10,6 +11,7 @@ export default function Home() {
 
   return (
     <main className={styles.home}>
+      <Contact />
       <Nav />
       <div className={styles.gallery}>
         <Scroller drift={driftSpeed}>
