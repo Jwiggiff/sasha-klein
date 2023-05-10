@@ -19,5 +19,23 @@
       left: -1em;
       transform: scale(-1, 1);
     }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--text-color);
+      transition: width 0.2s ease-in-out;
+    }
+
+    &:hover,
+    &:focus-visible {
+      &::after {
+        width: 100%;
+      }
+    }
   }
 }
