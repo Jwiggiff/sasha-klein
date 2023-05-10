@@ -18,6 +18,13 @@ export default function Scroller({
 
   const scroll = (dy: number) => {
     childrenRefs.current.forEach((el, i) => {
+      // if (
+      //   Number.isNaN(translates.current[i]) ||
+      //   Number.isNaN(dy) ||
+      //   Number.isNaN(height)
+      // )
+      //   debugger;
+
       translates.current[i] -= dy;
       let duration = 200;
 
@@ -29,6 +36,11 @@ export default function Scroller({
       if (translates.current[i] > height) {
         translates.current[i] -= height;
         duration = 0;
+      }
+
+      if (Number.isNaN(translates.current[i])) {
+        console.log(typeof dy, typeof height, typeof translates.current[i]);
+        debugger;
       }
 
       el?.animate(
@@ -58,6 +70,7 @@ export default function Scroller({
     translates.current = childrenRefs.current.map(
       (el, i) => i * el!.getBoundingClientRect().height
     );
+    console.log(translates);
 
     childrenRefs.current.forEach((el, i) =>
       el!.animate(
