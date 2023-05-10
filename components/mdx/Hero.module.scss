@@ -1,4 +1,8 @@
+@use "./FullWidth.module.scss" as *;
+
 .hero {
+  @extend .fullWidth;
+
   img {
     width: var(--container-width);
     margin-inline: auto;

@@ -9,7 +9,7 @@ export default function Hero({
   image: string;
 }) {
   return (
-    <div className={styles.hero + " full-width"}>
+    <div className={styles.hero}>
       <h1>{title}</h1>
       <img src={image} alt={title} />
     </div>

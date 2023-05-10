@@ -1,5 +1,5 @@
 import ProjectsHeader from "@/components/ProjectsHeader";
-import "./Projects.scss";
+import styles from "./Projects.module.scss";
 
 export default function ProjectsLayout({
   children,
@@ -7,9 +7,9 @@ export default function ProjectsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <>
+    <main className={styles.projectWrapper}>
       <ProjectsHeader />
-      <article>{children}</article>
-    </>
+      <article className={styles.article}>{children}</article>
+    </main>
   );
 }
