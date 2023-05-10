@@ -86,6 +86,8 @@ export default function Scroller({
     if (drift) {
       driftID = requestAnimationFrame(drifter);
     }
+
+    return () => cancelAnimationFrame(driftID);
   }, []);
 
   return (
