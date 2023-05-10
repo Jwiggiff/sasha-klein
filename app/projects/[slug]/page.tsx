@@ -12,7 +12,7 @@ export function getStaticPaths() {
   return {
     paths: slugs.map((slug: string) => ({
       params: {
-        slug: slug.replace(/\.md$/, ""),
+        slug: slug.replace(/\.mdx$/, ""),
       },
     })),
     fallback: false,
