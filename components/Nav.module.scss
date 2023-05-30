@@ -1,3 +1,48 @@
+.blockAnim {
+  position: relative;
+  clip-path: inset(100% 0 0 0);
+  animation: parent 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+
+  @keyframes parent {
+    0% {
+      clip-path: inset(100% 0 0 0);
+    }
+    50% {
+      clip-path: inset(0 0 0 0);
+    }
+    100% {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--text-color);
+    clip-path: inset(100% 0 0 0);
+
+    animation: clipPath 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    animation-delay: inherit;
+
+    @keyframes clipPath {
+      0% {
+        clip-path: inset(100% 0 0 0);
+      }
+      50% {
+        clip-path: inset(0 0 0 0);
+      }
+      100% {
+        clip-path: inset(0 0 100% 0);
+      }
+    }
+  }
+}
+
+li.blockAnim {
+  animation-delay: 1s;
+}
+
 .nav {
   display: grid;
   grid-template-rows: max-content 1fr;

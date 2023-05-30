@@ -8,14 +8,16 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <h1 className={styles.name}>
-        Sasha
+        <span className={styles.blockAnim}>Sasha</span>
         <br />
-        Klein
+        <span className={styles.blockAnim}>Klein</span>
       </h1>
       <ul className={styles.navlist}>
         {projs.map((proj) => (
-          <li key={proj.slug}>
-            <Link className={styles.navlink} href={`/projects/${proj.slug}`}>{proj.title}</Link>
+          <li className={styles.blockAnim} key={proj.slug}>
+            <Link className={styles.navlink} href={`/projects/${proj.slug}`}>
+              {proj.title}
+            </Link>
           </li>
         ))}
       </ul>
