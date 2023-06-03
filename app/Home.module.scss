@@ -9,4 +9,14 @@
   margin-right: 16rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  > div > div {
+    transition: opacity 0.2s linear;
+  }
+
+  &:hover {
+    > div > div:not(:hover) {
+      opacity: 0.5;
+    }
+  }
 }
